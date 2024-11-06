@@ -42,16 +42,22 @@ Our API supports network scanning, compliance verification, and reporting.
   "alert_type": "unauthorized_access",
   "threshold_value": "5"
 }
-
 - **Response**:
 {
   "status": "alert_created",
   "alert_id": "67890"
 }
-
 - **Logic**: Allows the user to set up different types of alerts (e.g., unauthorized access). These alerts trigger notifications when a violation threshold is reached.
 
-  
+### Retrieve compliance report
+- **URL**: `/reports/{scan_id}`
+- **Method**: GET
+- **Response**:
+{
+  "report_url": "https://example.com/reports/12345.pdf"
+}
+- **Logic**: Fetches the generated report for a specific scan ID. The report includes a summary of network scanning results, compliance status, and detailed violations.
+
 ### Authentication
 - **JWT Token**: Required for all requests.
 
