@@ -4,10 +4,20 @@
 Our API supports network scanning, compliance verification, and reporting.
 
 ### Network Scanning Endpoint
-- **URL**: `/api/scan/network`
-- **Method**: GET
-- **Parameters**: `ip_range`, `scan_type`
-- **Response**: `{ "status": "success", "data": [...] }`
+- **URL**: `/scan/network`
+- **Method**: POST
+- **Parameters**: `ip_range`, `scan_depth`
+- **Request Body**: 
+{
+  "ip_range": "192.168.1.0/24",
+  "scan_depth": "full"
+}
+- **Response**:
+- {
+  "status": "scan_initiated",
+  "scan_id": "12345"
+}
+
 
 ### Compliance Verification Endpoint
 - **URL**: `/api/compliance/verify`
