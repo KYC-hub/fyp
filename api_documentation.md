@@ -6,7 +6,6 @@ Our API supports network scanning, compliance verification, and reporting.
 ### Network Scanning Endpoint
 - **URL**: `/scan/network`
 - **Method**: POST
-- **Parameters**: `ip_range`, `scan_depth`
 - **Request Body**: 
 {
   "ip_range": "192.168.1.0/24",
@@ -21,7 +20,7 @@ Our API supports network scanning, compliance verification, and reporting.
 
 
 ### Compliance Verification Endpoint
-- **URL**: `/api/compliance/verify`
+- **URL**: `/compliance/verify`
 - **Method**: POST
 - **Parameters**: `scan_data`, `benchmark`
 - **Response**: `{ "compliance_status": "non-compliant", "details": [...] }`
