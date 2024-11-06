@@ -38,8 +38,13 @@ Allows users to download reports in formats like PDF and CSV.
 
 ## Data Flow
 User → Frontend UI → API Layer: Users send requests through the UI, which are routed via the API layer to the backend.
+
 API Layer ↔ Database: API accesses the database for user data, scan results, and compliance standards.
+
 Network Scanning Module ↔ Compliance Module: Scan results are sent for verification, and the compliance module checks against stored benchmarks.
+
 Compliance Module → Alerting Module: Non-compliance triggers alerts sent to the user.
+
 LLM Integration ↔ Compliance Module: The LLM uses policies to analyze data and provide suggestions.
+
 Report Generation Module → Frontend UI: Completed reports are available for user download.
