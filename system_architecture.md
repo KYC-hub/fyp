@@ -4,11 +4,6 @@
 This architecture comprises three core layers: frontend, backend, and data storage.
 
 ## Components
-- **Frontend**: Web interface (React/HTML5).
-- **Backend**: Flask/Django for API logic, compliance checks.
-- **Database**: MongoDB for storing scan results and user data.
-
-## Data Flow
 - User Interface (UI):
 The frontend communicates with backend services via RESTful API calls, handling requests and displaying data in dashboards.
 
@@ -40,3 +35,11 @@ Sends alerts through channels (e.g., email, in-app notifications).
 - Report Generation Module:
 Formats compliance and scan results into reports.
 Allows users to download reports in formats like PDF and CSV.
+
+## Data Flow
+User → Frontend UI → API Layer: Users send requests through the UI, which are routed via the API layer to the backend.
+API Layer ↔ Database: API accesses the database for user data, scan results, and compliance standards.
+Network Scanning Module ↔ Compliance Module: Scan results are sent for verification, and the compliance module checks against stored benchmarks.
+Compliance Module → Alerting Module: Non-compliance triggers alerts sent to the user.
+LLM Integration ↔ Compliance Module: The LLM uses policies to analyze data and provide suggestions.
+Report Generation Module → Frontend UI: Completed reports are available for user download.
