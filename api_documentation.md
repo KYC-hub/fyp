@@ -58,6 +58,21 @@ Our API supports network scanning, compliance verification, and reporting.
 }
 - **Logic**: Fetches the generated report for a specific scan ID. The report includes a summary of network scanning results, compliance status, and detailed violations.
 
+### LLM training
+- **URL**: `/train-LLM`
+- **Method**: POST
+- **Request Body**:
+{
+  "policy_name": "NewGDPRPolicy",
+  "policy_text": "Updated compliance rule..."
+}
+- **Response**:
+{
+  "status": "policy_added",
+  "policy_id": "23456"
+}
+- **Logic**: Adds new compliance policies to the system, allowing the LLM to process updated compliance rules.
+
 ### Authentication
 - **JWT Token**: Required for all requests.
 
