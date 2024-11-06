@@ -22,9 +22,36 @@ Our API supports network scanning, compliance verification, and reporting.
 ### Compliance Verification Endpoint
 - **URL**: `/compliance/verify`
 - **Method**: POST
-- **Parameters**: `scan_data`, `benchmark`
-- **Response**: `{ "compliance_status": "non-compliant", "details": [...] }`
+- **Request Body**:
+{
+  "scan_id": "12345",
+  "compliance_standard": "GDPR"
+}
+- **Response**:
+{
+  "compliance_status": "compliant",
+  "violations": []
+}
+- **Logic**: This endpoint will compare the scan results against predefined rules from the specified compliance standard (e.g., GDPR). It returns the compliance status and any violations.
 
+### Alerts
+- **URL**: `/alerts`
+- **Method**: POST
+- **Request Body**:
+{
+  "alert_type": "unauthorized_access",
+  "threshold_value": "5"
+}
+
+- **Response**:
+{
+  "status": "alert_created",
+  "alert_id": "67890"
+}
+
+- **Logic**: Allows the user to set up different types of alerts (e.g., unauthorized access). These alerts trigger notifications when a violation threshold is reached.
+
+  
 ### Authentication
 - **JWT Token**: Required for all requests.
 
