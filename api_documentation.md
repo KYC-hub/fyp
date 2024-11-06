@@ -13,10 +13,11 @@ Our API supports network scanning, compliance verification, and reporting.
   "scan_depth": "full"
 }
 - **Response**:
-- {
+{
   "status": "scan_initiated",
   "scan_id": "12345"
 }
+- **Logic**: When this endpoint is called, it triggers the backend to start scanning the network range provided. The scan result is stored in a database and associated with a unique scan ID.
 
 
 ### Compliance Verification Endpoint
